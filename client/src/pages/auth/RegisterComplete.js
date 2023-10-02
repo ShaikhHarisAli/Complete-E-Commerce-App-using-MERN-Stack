@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { auth } from "../../firebase";
+import { auth } from "../../firebase";
 // import { toast } from "react-toastify";
 
 const RegisterComplete = ({ history }) => {
@@ -9,11 +9,19 @@ const RegisterComplete = ({ history }) => {
   useEffect(() => {
   setEmail(window.localStorage.getItem("emailFormRegistration"));
 //    console.log(window.localStorage.getItem("emailFormRegistration"))
+console.log(window.location.href)
    
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try{
+      const result = await auth.signInWithEmailLink(email,window.location.href)
+
+    }
+    catch{
+
+    }
   };
 
   const completeRegistrationForm = () => (
