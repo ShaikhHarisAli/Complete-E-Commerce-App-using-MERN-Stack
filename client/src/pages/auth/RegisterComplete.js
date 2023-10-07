@@ -63,7 +63,7 @@ console.log(window.location.href)
       />
       <br />
       <button type="submit" className="btn btn-raised">
-        Complete Registration
+        Complete Registration 
       </button>
     </form>
   );
